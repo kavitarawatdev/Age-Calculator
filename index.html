@@ -5,31 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
 </head>
 <body>
     <h1>Age Calculator</h1>
-    <div class="calculatorBox">
-        <div class="userInput">
+    <!-- =========================
+     CALCULATOR BOX
+     ============================= -->
+    <div class="calculator-box-container">
+        <div class="user-input">
             <label for="dob">Enter your Date of Birth : </label>
             <input id="DOB" type="date" >
         </div>
-        <div class="calculate">
+        <div class="calculate-btns">
             <button class="solve">Calculate</button>
             <button class="reset">Reset</button>
         </div>      
     </div>
-
+    <!-- =========================
+     RESULT BOX
+     ============================= -->
     <div class="result">
         <div class="years"><input type="text" disabled> <span>Years,</span></div>
         <div class="months"><input type="text" disabled> <span>Months,</span></div>
         <div class="days"><input type="text"disabled> <span>Days,</span></div>
-        <div class="hours"><input type="text"disabled> <span>Hours</span></div>
+        <div class="hours"><input type="text"disabled> <span>Hours,</span></div>
         <div class="minutes"><input type="text"disabled> <span>Minutes,</span></div>
         <div class="seconds"><input type="text"disabled> <span>Seconds,</span></div>
     </div>
-    
-
-    <script src="app.js"></script>
     
 </body>
 </html>

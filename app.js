@@ -15,7 +15,9 @@ const resetButton = () => {
     userInput.value = "";
     reset.style.display = "none";
 }
-
+// ====================================
+//                calculating age
+// ====================================
 const ageCount = () => {
     let now = new Date();                           
     let currentY = now.getFullYear();                
