@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Age Calculator</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="app.js"></script>
 </head>
@@ -12,12 +12,12 @@
     <!-- =========================
      CALCULATOR BOX
      ============================= -->
-    <div class="calculator-box-container">
-        <div class="user-input">
+    <div class="calculator-box-container flex flex-col flex-centered">
+        <div class="user-input flex flex-centered">
             <label for="dob">Enter your Date of Birth : </label>
             <input id="DOB" type="date">
         </div>
-        <div class="calculate-btns">
+        <div class="calculate-btns flex-col flex flex-centered">
             <button class="solve">Calculate</button>
             <button class="reset">Reset</button>
         </div>      
@@ -25,13 +25,13 @@
     <!-- =========================
      RESULT BOX
      ============================= -->
-    <div class="result">
-        <div class="years"><input type="text"  class="age" disabled> <span>Years,</span></div>
-        <div class="months"><input type="text"  class="age" disabled> <span>Months,</span></div>
-        <div class="days"><input type="text" class="age" disabled> <span>Days,</span></div>
-        <div class="hours"><input type="text" class="age" disabled> <span>Hours,</span></div>
-        <div class="minutes"><input type="text" class="age" disabled> <span>Minutes,</span></div>
-        <div class="seconds"><input type="text" class="age" disabled> <span>Seconds,</span></div>
+    <div class="result flex-centered">
+        <div class="years flex flex-centered"><input type="text"  class="age" disabled> <span>Years,</span></div>
+        <div class="months flex flex-centered"><input type="text"  class="age" disabled> <span>Months,</span></div>
+        <div class="days flex flex-centered"><input type="text" class="age" disabled> <span>Days,</span></div>
+        <div class="hours flex flex-centered"><input type="text" class="age" disabled> <span>Hours,</span></div>
+        <div class="minutes flex flex-centered"><input type="text" class="age" disabled> <span>Minutes,</span></div>
+        <div class="seconds flex flex-centered"><input type="text" class="age" disabled> <span>Seconds,</span></div>
     </div>
     
 </body>

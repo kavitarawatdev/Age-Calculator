@@ -5,11 +5,12 @@
 }
 
 :root{
-    --text :#412343;
-    --body:#6482AD;
-    --main:#A1C398;
-    --heading:#CB80AB;
-    --btn:#F6E6CB;
+    --main:#578FCA;
+    --btn:#9ACBD0;
+    /* --text:#D1F8EF; */
+    --heading:#A1E3F9;
+    --text:#074799;
+    --body:#3674B5;
 }
 
 html{
@@ -18,13 +19,14 @@ html{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 300;
     background-color: var(--body);
+    color: var(--text);
 }
 
 body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     gap: 3rem;
     height: 100vh;
 }
@@ -32,10 +34,10 @@ body{
 button{
     border: 1 px solid var(--body);
     outline: none;
-    padding: 0.8rem;
-    width: 7rem;
+    padding: 1rem;
     border-radius: 0.3rem;
-    font-weight: 400;
+    font-weight: 600;
+    color: var(--text);
     background-color: var(--btn);
     cursor: pointer;
 }
@@ -44,32 +46,37 @@ input{
     border: none;
     outline: none;
     padding: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
 }
 
 h1{
    font-size: 4rem;
    color: var(--heading);
-   -webkit-text-stroke: 1px var(--text);
+}
+/* reusable-code */
+.flex{
+    display: flex;
 }
 
+.flex-col{
+    flex-direction: column;
+}
+
+.flex-centered{
+    align-items: center;
+    justify-content: center;
+}
 
 .calculator-box-container {
     background-color: var(--main);
     font-size: 1.8rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content:center;
     gap: 3rem;
     padding: 1.3rem 0.3rem;
     border-radius: 2rem;
 }
 
-.calculator-box-container div{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 .user-input{
     gap:1rem;
@@ -80,12 +87,11 @@ label{
 }
 
 .user-input  input{
-    height: 2.5rem;
     background-color: var(--btn);
+    cursor:text;
 }
 
 .calculate-btns {
-    flex-direction: column;
     gap: 2rem;
 }
 
@@ -96,26 +102,21 @@ label{
     font-weight: 600;
     padding: 1.5rem;
     display: none;
-    align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
     margin: 0rem 3rem;
 }
 
 .result  div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     gap: 0.5rem;
 }
 
 .result  div > input {
     padding: 0.5rem;
     width: 3rem;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 600;
-    color:brown;
+    color:var(--heading);
     background-color: transparent;
 }
 
