@@ -7,14 +7,31 @@
     <link rel="stylesheet" href="style.css">
     <script defer src="app.js"></script>
 </head>
-<body>
-    <h1>Age Calculator</h1>
+<body class="">
+    <!-- header -->
+    <div class="flex flex-col flex-centered header">
+        <h1>Age Calculator</h1>
+        <p class="author">by Kavita Rawat</p>
+    </div>
+
+      <!-- Theme Selector -->
+    <div class="theme-selector">
+        <label for="themeSelect">Choose Theme:</label>
+        <select id="themeSelect" value="">
+            <option value="default">Default</option>
+            <option value="dark-ocean">Dark Ocean</option>
+            <option value="soft-pastel">Soft Pastel</option>
+            <option value="nature-green">Nature Green</option>
+            <option value="warm-sunset">Warm Sunset</option>
+            <option value="lavender-dreams">Lavender Dreams</option>
+        </select>
+    </div>
     <!-- =========================
      CALCULATOR BOX
      ============================= -->
     <div class="calculator-box-container flex flex-col flex-centered">
-        <div class="user-input flex flex-centered">
-            <label for="dob">Enter your Date of Birth : </label>
+        <div class="user-input grid grid-cols-2">
+            <label for="DOB">Enter your Date of Birth :</label>
             <input id="DOB" type="date">
         </div>
         <div class="calculate-btns flex-col flex flex-centered">
@@ -26,13 +43,13 @@
      RESULT BOX
      ============================= -->
     <div class="result flex-centered">
-        <div class="years flex flex-centered"><input type="text"  class="age" disabled> <span>Years,</span></div>
-        <div class="months flex flex-centered"><input type="text"  class="age" disabled> <span>Months,</span></div>
+        <div class="years flex flex-centered"><input type="text" class="age" disabled> <span>Years,</span></div>
+        <div class="months flex flex-centered"><input type="text" class="age" disabled> <span>Months,</span></div>
         <div class="days flex flex-centered"><input type="text" class="age" disabled> <span>Days,</span></div>
         <div class="hours flex flex-centered"><input type="text" class="age" disabled> <span>Hours,</span></div>
         <div class="minutes flex flex-centered"><input type="text" class="age" disabled> <span>Minutes,</span></div>
         <div class="seconds flex flex-centered"><input type="text" class="age" disabled> <span>Seconds,</span></div>
     </div>
-    
+
 </body>
 </html>

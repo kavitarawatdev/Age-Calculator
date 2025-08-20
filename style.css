@@ -1,156 +1,405 @@
-*{
+* {
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
+    letter-spacing: 0.1rem;
 }
 
-:root{
-    --main:#578FCA;
-    --btn:#9ACBD0;
-    /* --text:#D1F8EF; */
-    --heading:#A1E3F9;
-    --text:#074799;
-    --body:#3674B5;
+:root {
+    --main: #2d2d30;
+    --btn: #3c3c3f;
+    --heading: #b8b8b8;
+    --text: #e8e8e8;
+    --body: linear-gradient(135deg, #1e1e1e 0%, #2d2d30 50%, #3c3c3f 100%);
+    --card-bg: rgba(184, 184, 184, 0.1);
+    --input-bg: rgba(184, 184, 184, 0.15);
+    --shadow: rgba(0, 0, 0, 0.2);
+    --hover: #4a4a4f;
 }
 
-html{
+/* Dark Ocean Theme */
+.dark-ocean {
+    --main: #1a2332;
+    --btn: #2d4059;
+    --heading: #7ba7bc;
+    --text: #e8f4f8;
+    --body: linear-gradient(135deg, #0f1419 0%, #1a2332 50%, #2d4059 100%);
+    --card-bg: rgba(123, 167, 188, 0.1);
+    --input-bg: rgba(123, 167, 188, 0.15);
+    --shadow: rgba(15, 20, 25, 0.4);
+    --hover: #3a4f6b;
+}
+
+/* Soft Pastel Theme */
+.soft-pastel {
+    --main: #f8f9ff;
+    --btn: #e6e9f0;
+    --heading: #8b7ca6;
+    --text: #5a5a5a;
+    --body: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    --card-bg: rgba(255, 255, 255, 0.7);
+    --input-bg: rgba(255, 255, 255, 0.9);
+    --shadow: rgba(139, 124, 166, 0.2);
+    --hover: #dce0ea;
+}
+
+/* Nature Green Theme */
+.nature-green {
+    --main: #2d5a3d;
+    --btn: #4a7c59;
+    --heading: #9ed5c5;
+    --text: #f0f8f0;
+    --body: linear-gradient(135deg, #1e3a2e 0%, #2d5a3d 50%, #4a7c59 100%);
+    --card-bg: rgba(158, 213, 197, 0.15);
+    --input-bg: rgba(158, 213, 197, 0.2);
+    --shadow: rgba(30, 58, 46, 0.4);
+    --hover: #5a8e69;
+}
+
+/* Warm Sunset Theme */
+.warm-sunset {
+    --main: #3d2914;
+    --btn: #8b4513;
+    --heading: #ffd4a3;
+    --text: #fff8e7;
+    --body: linear-gradient(135deg, #2c1810 0%, #3d2914 50%, #8b4513 100%);
+    --card-bg: rgba(255, 212, 163, 0.15);
+    --input-bg: rgba(255, 212, 163, 0.2);
+    --shadow: rgba(44, 24, 16, 0.5);
+    --hover: #a0521a;
+}
+
+/* Lavender Dreams Theme */
+.lavender-dreams {
+    --main: #6c5b7b;
+    --btn: #9b8aa0;
+    --heading: #d4c5d9;
+    --text: #f8f6f9;
+    --body: linear-gradient(135deg, #4a3f5a 0%, #6c5b7b 50%, #9b8aa0 100%);
+    --card-bg: rgba(212, 197, 217, 0.15);
+    --input-bg: rgba(212, 197, 217, 0.2);
+    --shadow: rgba(74, 63, 90, 0.4);
+    --hover: #ab9aaf;
+}
+
+/* ===========================================
+======================================== */
+
+html {
     font-size: 62.5%;
-    /* 1rem=10px */
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 300;
-    background-color: var(--body);
-    color: var(--text);
 }
 
-body{
+body {
+    background: var(--body);
+    color: var(--text);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 3rem;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 2rem;
+    position: relative;
+    overflow-x: hidden;
 }
 
-button{
-    border: 1 px solid var(--body);
+button {
+    border: 2px solid transparent;
+    outline: none;
+    padding: 1.2rem 2rem;
+    border-radius: 1rem;
+    font-weight: 600;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--text);
+    background: var(--btn);
+    border:1px solid var(--heading);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--shadow);
+    backdrop-filter: blur(10px);
+}
+
+select{
+    border: 2px solid transparent;
+    outline: none;
+    border:1px solid var(--heading);
+    font-weight: 600;
+    font-size: clamp(1.3rem, 3vw, 1.5rem);
+    background-color: var(--input-bg);
+    color: var(--text);
+    padding:0.5rem 1rem;
+}
+option{
+    padding:0.5rem;
+    color:var(--main);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--shadow);
+    background: var(--hover);
+    border-color: var(--heading);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+input {
+    border: 2px solid transparent;
     outline: none;
     padding: 1rem;
-    border-radius: 0.3rem;
-    font-weight: 600;
-    color: var(--text);
-    background-color: var(--btn);
-    cursor: pointer;
-}
-
-input{
-    border: none;
-    outline: none;
-    padding: 0.5rem;
-    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
     font-weight: 700;
     color: var(--text);
+    border-radius: 0.8rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
 }
 
-h1{
-   font-size: 4rem;
-   color: var(--heading);
+input:focus {
+    border-color: var(--heading);
+    box-shadow: 0 0 15px rgba(240, 147, 251, 0.3);
 }
-/* reusable-code */
-.flex{
+
+h1 {
+    font-size: clamp(3rem, 8vw, 5rem);
+    color: var(--heading);
+    text-align: center;
+    text-shadow: 2px 2px 4px var(--shadow);
+    font-weight: 700;
+}
+
+.author{
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    color: var(--text);
+    text-align: center;
+    font-weight: 700;
+}
+
+/* Reusable classes */
+.flex {
     display: flex;
 }
 
-.flex-col{
+.flex-col {
     flex-direction: column;
 }
 
-.flex-centered{
+.flex-centered {
     align-items: center;
     justify-content: center;
 }
+.grid{
+    display: grid;
+}
 
+.grid-cols-1{
+    grid-template-columns: repeat(1, 1fr);
+}
+.grid-cols-2{
+    grid-template-columns: repeat(2, 1fr);
+}
 .calculator-box-container {
-    background-color: var(--main);
-    font-size: 1.8rem;
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
     gap: 3rem;
-    padding: 1.3rem 0.3rem;
+    padding: 3rem 2rem;
     border-radius: 2rem;
+    box-shadow: 0 8px 32px var(--shadow);
+    width: 100%;
+    max-width: 500px;
+    transition: all 0.3s ease;
 }
 
-
-.user-input{
-    gap:1rem;
-    padding: 0.5rem;
-}
-label{
-    width: 20rem;
+.calculator-box-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px var(--shadow);
 }
 
-.user-input  input{
-    background-color: var(--btn);
-    cursor:text;
+.user-input {
+    gap: 2rem;
+    padding: 1rem;
+    width: 100%;
+    text-align:justify;
+}
+
+label {
+    width: 100%;
+    max-width: 20rem;
+    font-weight: 500;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 0.5rem;
+}
+
+.user-input input {
+    background: var(--input-bg);
+    cursor: text;
+    width: 100%;
+    max-width: 20rem;
 }
 
 .calculate-btns {
     gap: 2rem;
+    flex-wrap: wrap;
 }
-
 
 .result {
-    background-color: var(--main);
-    font-size: 2rem;
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: clamp(1.6rem, 3vw, 2rem);
     font-weight: 600;
-    padding: 1.5rem;
+    padding: 2rem;
     display: none;
     flex-wrap: wrap;
-    gap: 1rem;
-    margin: 0rem 3rem;
+    gap: 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 32px var(--shadow);
+    width: 100%;
+    max-width: 500px;
+    justify-content: center;
 }
 
-.result  div {
-    gap: 0.5rem;
+.result div {
+    gap: 0.8rem;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 1rem;
+    min-width: 120px;
+    justify-content: center;
 }
 
-.result  div > input {
+.result div > input {
     padding: 0.5rem;
-    width: 3rem;
-    font-size: 1.8rem;
+    width: 4rem;
+    font-size: clamp(1.6rem, 3vw, 1.8rem);
     font-weight: 600;
-    color:var(--heading);
-    background-color: transparent;
+    color: var(--heading);
+    background: transparent;
+    text-align: center;
+    border: none;
 }
 
-.result  div >  span {
+.result div > span {
     color: var(--text);
+    font-weight: 500;
 }
-
 
 .reset {
     display: none;
 }
 
-@media (max-width:350px) {
-    body{
-        gap:1rem;
+/* Enhanced responsive design */
+@media (max-width: 768px) {
+    body {
+        gap: 2rem;
+        padding: 1rem;
     }
-    h1{
-        font-size: 3rem;
-        font-weight: 900;
-        -webkit-text-stroke: 0;
+    
+    .calculator-box-container {
+        padding: 2rem 1.5rem;
+        gap: 2rem;
     }
-    .calculator-box-container{
-        gap:1rem;
-        font-size: 1.6rem;
+    
+    .user-input {
+        flex-direction: column;
+        align-items: stretch;
     }
-    .calculator-box-container div{
+    
+    label {
+        max-width: none;
+        text-align: center;
+    }
+    
+    .user-input input {
+        max-width: none;
+    }
+    
+    .calculate-btns {
         flex-direction: column;
         gap: 1rem;
     }
-    .result{
-        font-size: 1.7rem;
+    
+    button {
+        padding: 1.5rem;
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        gap: 1.5rem;
+        padding: 0.5rem;
+    }
+    
+    .calculator-box-container {
+        gap: 1.5rem;
+        padding: 1.5rem 1rem;
+        border-radius: 1.5rem;
+    }
+    
+    .result {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+    
+    .result div {
+        min-width: 100px;
+        padding: 0.8rem;
+        flex-direction: column;
         gap: 0.5rem;
     }
-    .result div {
-        gap:0.2rem;
+    
+    .result div > input {
+        width: 3rem;
     }
+}
+
+@media (max-width: 350px) {
+    .calculator-box-container {
+        padding: 1rem;
+    }
+    
+    .result div {
+        min-width: 80px;
+        padding: 0.5rem;
+    }
+    
+    button {
+        padding: 1rem;
+        font-size: 1.4rem;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus styles for better accessibility */
+button:focus-visible,
+input:focus-visible {
+    outline: 1px solid var(--heading);
+    outline-offset: 1px;
+}
+
+/* Loading animation for better UX */
+@keyframes shimmer {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+.calculator-box-container {
+    animation: shimmer 2s ease-in-out infinite;
 }
